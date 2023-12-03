@@ -1,0 +1,33 @@
+# https://learn.microsoft.com/en-us/windows/wsl/wsl-config
+# Network host settings that enable the DNS server used by WSL 2. 
+#	Changes the hostname
+#       sets generateHosts to true (the default), auto-generating /etc/hosts
+#       sets generateResolvConf to true (the default), WSL generates /etc/resolv.conf
+#       coul create your own (ie. nameserver 1.1.1.1)
+[network]
+# hostname = westie_arch
+generateHosts = true
+generateResolvConf = true
+
+# Set the user when launching a distribution with WSL.
+# [user]
+# default=mwoodpatrick
+
+# Automatically mount Windows drive when the distribution is launched
+[automount]
+crossDistro = true
+
+# Sets the `/etc/fstab` file to be processed when a WSL distribution is launched.
+mountFsTab = false
+
+# [boot]
+# systemd=true # enabled systemd
+
+# Set a command to run when a new WSL instance launches. This example starts the Docker container service.
+command = sleep 5; mount -a; echo "running my startup commands from /etc/wsl.conf"
+# Set whether WSL supports interop process like launching Windows apps and adding path variables.
+# Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled=true # enable launch of Windows binaries; default is true
+appendWindowsPath=true # append Windows path to $PATH variable; default is true
+

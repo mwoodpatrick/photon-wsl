@@ -1,0 +1,6 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+/dev/sdc /     ext4   defaults,shared   0      1
+/ /mnt/wsl/instances/westie-os none defaults,bind,X-mount.mkdir 0 0
